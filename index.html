@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stackly Car Accessories | Dress Your Drive</title>
+<meta name="description" content="Seat covers, LED lights, dash cams, floor mats and more. Genuine car accessories with fitting support in Salem, Tamil Nadu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#052E2B;
+  --primary:#0F766E;
+  --accent:#FBBF24;
+  --bg:#FAFAF5;
+  --text:#14211F;
+  --footer:#021412;
+  --cream:#FFF6DE;
+  --cream-deep:#FBE8B5;
+  --muted:#5B6B68;
+  --line:rgba(5,46,43,.12);
+  --radius-lg:28px;
+  --radius-md:16px;
+  --radius-sm:10px;
+  --font-display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --header-h:78px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);overflow-x:hidden;max-width:100%}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;max-width:100%;position:relative;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.container{width:90%;max-width:1800px;margin-inline:auto}
+.section{padding:110px 0}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1;letter-spacing:.2px;text-transform:uppercase}
+.sec-title{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;color:var(--charcoal)}
+.sec-sub{max-width:540px;color:var(--muted);margin-top:14px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:var(--primary);margin-bottom:14px}
+.tag::before{content:"";width:34px;height:3px;background:var(--primary);border-radius:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:600;font-size:.98rem;transition:background .3s,color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.btn-red{background:var(--primary);color:#fff;box-shadow:0 12px 26px -10px rgba(251,191,36,.7)}
+.btn-red:hover{background:#0B5A54}
+.btn-dark{background:var(--charcoal);color:#fff}
+.btn-dark:hover{background:var(--primary)}
+.btn-ghost{border:2px solid var(--charcoal);color:var(--charcoal)}
+.btn-ghost:hover{background:var(--charcoal);color:#fff}
+.btn svg{width:18px;height:18px;transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--charcoal);z-index:100;transition:height .35s,box-shadow .35s}
+.header.is-scrolled{height:66px;box-shadow:0 10px 30px rgba(2,20,18,.35)}
+.header .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{height:44px;width:auto;background:transparent}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a.nav-link{position:relative;color:#E5E7EB;font-weight:500;font-size:.97rem;padding:10px 16px;border-radius:999px;transition:color .3s}
+.nav a.nav-link::after{content:"";position:absolute;left:16px;right:16px;bottom:5px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.nav a.nav-link:hover,.nav a.nav-link.active{color:#fff}
+.nav a.nav-link:hover::after,.nav a.nav-link.active::after{transform:scaleX(1)}
+.header-cta{display:flex;align-items:center;gap:14px}
+.login-btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;padding:11px 24px;border-radius:999px;font-weight:600;font-size:.95rem;transition:background .3s,transform .3s}
+.login-btn:hover{background:var(--accent);color:var(--charcoal)}
+.login-btn svg{width:17px;height:17px}
+.burger{display:none;width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);align-items:center;justify-content:center;flex-direction:column;gap:5px;flex:none;transition:background .3s,border-color .3s}
+.burger span{display:block;width:22px;height:2.5px;background:#fff;border-radius:3px;transition:width .3s,background .3s}
+.burger:hover,.burger:active{background:var(--primary);border-color:var(--primary)}
+.burger:hover span:nth-child(2){width:15px}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:200;background:var(--charcoal);display:flex;flex-direction:column;padding:22px 6% 36px;clip-path:circle(0% at calc(100% - 44px) 42px);visibility:hidden;transition:clip-path .7s cubic-bezier(.77,0,.18,1),visibility 0s .7s;overflow-y:auto}
+.mobile-menu.open{clip-path:circle(150% at calc(100% - 44px) 42px);visibility:visible;transition:clip-path .7s cubic-bezier(.77,0,.18,1),visibility 0s}
+.mm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.mm-top img{height:40px;width:auto}
+.mm-close{width:46px;height:46px;border-radius:50%;background:var(--primary);display:grid;place-items:center;transition:transform .4s}
+.mm-close:hover{transform:rotate(90deg)}
+.mm-close svg{width:22px;height:22px;stroke:#fff}
+.mm-links{display:flex;flex-direction:column}
+.mm-links a{font-family:var(--font-display);text-transform:uppercase;font-weight:700;font-size:2.6rem;color:#fff;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;opacity:0;transform:translateY(30px);transition:color .3s,padding-left .3s}
+.mm-links a:hover{color:var(--accent);padding-left:12px}
+.mm-links a svg{width:22px;height:22px;stroke:var(--accent)}
+.mobile-menu.open .mm-links a,.mobile-menu.open .mm-login{opacity:1;transform:none;transition:opacity .5s,transform .5s,color .3s,padding-left .3s}
+.mobile-menu.open .mm-links a:nth-child(1){transition-delay:.25s}
+.mobile-menu.open .mm-links a:nth-child(2){transition-delay:.32s}
+.mobile-menu.open .mm-links a:nth-child(3){transition-delay:.39s}
+.mobile-menu.open .mm-links a:nth-child(4){transition-delay:.46s}
+.mobile-menu.open .mm-links a:nth-child(5){transition-delay:.53s}
+.mobile-menu.open .mm-links a:nth-child(6){transition-delay:.6s}
+.mm-login{margin-top:34px;opacity:0;transform:translateY(30px);justify-content:center;width:100%;transition-delay:.7s}
+.mm-note{margin-top:auto;padding-top:30px;color:#9CA3AF;font-size:.9rem}
+
+/* Hero */
+.hero{background:linear-gradient(90deg,rgba(255,246,222,.97) 0%,rgba(255,246,222,.9) 48%,rgba(255,246,222,.68) 100%),url("./assets/mm.webp") center/cover no-repeat,var(--cream);padding:calc(var(--header-h) + 24px) 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:var(--cream-deep);right:-180px;top:-120px}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:90px;background:var(--bg);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-grid>*{min-width:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 18px 8px 8px;border-radius:999px;font-size:.88rem;font-weight:600;margin-bottom:26px}
+.hero-pill b{background:var(--primary);color:#fff;padding:4px 12px;border-radius:999px;font-weight:600}
+.hero h1{font-size:clamp(3.6rem,9.2vw,8rem);font-weight:800;color:var(--charcoal);line-height:.9}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line.red{color:var(--primary)}
+.char{display:inline-block;transform:translateY(110%)}
+.hero p.lead{max-width:480px;margin:28px 0 36px;font-size:1.1rem;color:#4B5563}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-trust{display:flex;align-items:center;gap:18px;margin-top:44px}
+.hero-trust .avatars{display:flex}
+.hero-trust .avatars img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid var(--cream);margin-left:-12px;background:var(--charcoal)}
+.hero-trust .avatars img:first-child{margin-left:0}
+.hero-trust p{font-size:.92rem;line-height:1.4}
+.hero-trust strong{display:block;font-size:1.05rem}
+.hero-visual{position:relative;height:620px}
+/* Home hero: real background image layer */
+.hero{background:var(--skin)}
+.hero::before{display:none}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,
+    rgba(var(--skin-rgb),.92) 0%,
+    rgba(var(--skin-rgb),.70) 40%,
+    rgba(var(--skin-rgb),.25) 100%);
+}
+.hv-main{position:absolute;right:0;top:0;width:82%;height:470px;border-radius:var(--radius-lg) var(--radius-lg) 220px var(--radius-lg);overflow:hidden;box-shadow:0 40px 70px -30px rgba(5,46,43,.5);background:var(--charcoal)}
+.hv-main img{width:100%;height:112%;object-fit:cover}
+.hv-small{position:absolute;left:0;bottom:30px;width:46%;height:250px;border-radius:var(--radius-lg);overflow:hidden;border:8px solid var(--cream);box-shadow:0 30px 50px -25px rgba(5,46,43,.55);background:var(--charcoal)}
+.hv-small img{width:100%;height:100%;object-fit:cover}
+.hv-chip{position:absolute;background:#fff;border-radius:var(--radius-md);padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 24px 40px -18px rgba(5,46,43,.4);font-size:.88rem;line-height:1.3}
+.hv-chip i{width:42px;height:42px;border-radius:12px;background:var(--primary);display:grid;place-items:center;flex:none}
+.hv-chip i svg{width:22px;height:22px;stroke:#fff}
+.hv-chip strong{display:block;font-size:1rem}
+.chip-1{right:-10px;bottom:150px}
+.chip-2{left:12%;top:60px}
+.spin-badge{position:absolute;right:6%;bottom:0;width:150px;height:150px;border-radius:50%;background:transparent;display:grid;place-items:center;filter:drop-shadow(0 14px 18px rgba(5,46,43,.35))}
+.spin-badge svg.ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:spin 16s linear infinite}
+.spin-badge svg.ring text{fill:#fff;font-family:var(--font-body);font-size:11px;letter-spacing:1.6px;font-weight:600}
+.spin-badge .core{position:relative;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--primary);border:3px solid var(--accent);display:grid;place-items:center}
+.spin-badge .core svg{width:30px;height:30px;stroke:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Marquee */
+.marquee{background:var(--primary);color:#fff;overflow:hidden;padding:20px 0;transform:rotate(-1.2deg) scaleX(1.06);margin:-14px 0 0;position:relative;z-index:5}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--font-display);font-weight:700;font-size:1.9rem;text-transform:uppercase;padding:0 26px;display:flex;align-items:center;gap:52px;white-space:nowrap}
+.marquee span::after{content:"";width:12px;height:12px;background:var(--cream);transform:rotate(45deg)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Categories bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:210px;gap:20px}
+.cat{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--charcoal);color:#fff;display:flex;align-items:flex-end;padding:26px;isolation:isolate}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cat::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(2,20,18,.88),rgba(2,20,18,.05) 65%);z-index:-1;transition:background .4s}
+.cat:hover img{transform:scale(1.09)}
+.cat:hover::before{background:linear-gradient(to top,rgba(251,191,36,.85),rgba(2,20,18,.1) 70%)}
+.cat h3{font-size:2.1rem;font-weight:700}
+.cat p{font-size:.9rem;color:#E5E7EB}
+.cat .go{position:absolute;right:22px;top:22px;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;transform:scale(.6) rotate(-45deg);opacity:0;transition:transform .45s,opacity .45s}
+.cat:hover .go{transform:none;opacity:1}
+.cat .go svg{width:20px;height:20px;stroke:var(--charcoal)}
+.c1{grid-column:span 5;grid-row:span 2}
+.c2{grid-column:span 4}
+.c3{grid-column:span 3}
+.c4{grid-column:span 3}
+.c5{grid-column:span 4}
+.cat.cream-card{background:var(--cream);color:var(--charcoal);flex-direction:column;justify-content:space-between;align-items:flex-start}
+.cat.cream-card::before{display:none}
+.cat.cream-card h3{font-size:2.6rem}
+.cat.cream-card p{color:#4B5563}
+
+/* Products */
+.products{background:var(--cream)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap}
+.tab{padding:11px 22px;border-radius:999px;border:2px solid var(--charcoal);font-weight:600;font-size:.92rem;transition:background .3s,color .3s,border-color .3s}
+.tab:hover{border-color:var(--primary);color:var(--primary)}
+.tab.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.p-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;position:relative;display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s}
+.p-card:hover{transform:translateY(-8px);box-shadow:0 30px 50px -28px rgba(5,46,43,.5)}
+.p-img{aspect-ratio:1/1;overflow:hidden;background:#E5E7EB;position:relative}
+.p-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.p-card:hover .p-img img{transform:scale(1.08)}
+.badge{position:absolute;left:14px;top:14px;background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px}
+.badge.dark{background:var(--charcoal)}
+.quick{position:absolute;left:14px;right:14px;bottom:14px;background:var(--charcoal);color:#fff;padding:12px;border-radius:12px;font-weight:600;font-size:.9rem;text-align:center;transform:translateY(130%);transition:transform .4s,background .3s}
+.p-card:hover .quick{transform:none}
+.quick:hover{background:var(--primary)}
+.p-info{padding:18px 20px 22px}
+.p-info small{color:var(--muted);font-size:.82rem}
+.p-info h4{font-size:1.45rem;font-weight:600;margin:4px 0 10px;color:var(--charcoal)}
+.p-row{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:700;font-size:1.12rem;color:var(--primary)}
+.price s{color:#9CA3AF;font-weight:400;font-size:.88rem;margin-left:6px}
+.stars{display:flex;gap:2px}
+.stars svg{width:14px;height:14px;fill:#F59E0B}
+.p-card.hide{display:none}
+
+/* Why us (dark split) */
+.why{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
+.why::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid rgba(251,191,36,.14);left:-200px;bottom:-240px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative;z-index:2}
+.why .sec-title{color:#fff}
+.why .sec-sub{color:#9CA3AF}
+.why-img{position:relative;border-radius:var(--radius-lg);overflow:hidden;height:560px;background:#14211F}
+.why-img img{width:100%;height:116%;object-fit:cover}
+.why-img .float{position:absolute;left:24px;bottom:24px;background:var(--primary);padding:20px 26px;border-radius:var(--radius-md);font-family:var(--font-display);font-size:1.5rem;text-transform:uppercase;font-weight:700;line-height:1.05}
+.why-img .float b{display:block;font-size:3.4rem}
+.feats{margin-top:36px;display:grid;gap:22px}
+.feat{display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.feat:last-child{border-bottom:0}
+.feat i{width:54px;height:54px;border-radius:16px;background:rgba(251,191,36,.14);display:grid;place-items:center;flex:none}
+.feat i svg{width:26px;height:26px;stroke:var(--accent)}
+.feat h4{font-size:1.5rem;font-weight:600}
+.feat p{color:#9CA3AF;font-size:.96rem;margin-top:4px}
+.stats>*{min-width:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:80px;position:relative;z-index:2}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:28px;text-align:center}
+.stat b{font-family:var(--font-display);font-size:3.6rem;font-weight:700;display:block;line-height:1;color:var(--accent)}
+.stat span{color:#D1D5DB;font-size:.95rem}
+
+/* Process timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+.timeline::before{content:"";position:absolute;left:12%;right:12%;top:48px;height:3px;background:repeating-linear-gradient(90deg,var(--primary) 0 12px,transparent 12px 22px)}
+.step{text-align:center;position:relative}
+.step .dot{width:96px;height:96px;border-radius:50%;background:#fff;border:3px solid var(--primary);display:grid;place-items:center;margin:0 auto 22px;position:relative;z-index:2;transition:background .35s,transform .35s}
+.step:hover .dot{background:var(--primary);transform:scale(1.08)}
+.step .dot svg{width:38px;height:38px;stroke:var(--primary);transition:stroke .35s}
+.step:hover .dot svg{stroke:#fff}
+.step h4{font-size:1.7rem;font-weight:600;color:var(--charcoal)}
+.step p{color:var(--muted);font-size:.96rem;max-width:240px;margin:8px auto 0}
+
+/* Offer banner */
+.offer{padding:0 0 110px}
+.offer-box>*{min-width:0}
+.offer-box{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--primary);color:#fff;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:420px;isolation:isolate}
+.offer-box::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.1);left:-160px;top:-200px;z-index:-1}
+.offer-text{padding:56px}
+.offer-text h2{font-size:clamp(2.6rem,5.4vw,4.6rem);font-weight:800}
+.offer-text p{max-width:420px;margin:16px 0 28px;color:#CCFBF1}
+.offer-text .btn{background:#fff;color:var(--primary)}
+.offer-text .btn:hover{background:var(--charcoal);color:#fff}
+.offer-img{height:100%;min-height:420px;position:relative}
+.offer-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.countdown{display:flex;gap:12px;margin-bottom:26px}
+.countdown div{background:rgba(2,20,18,.28);border-radius:12px;padding:10px 0;width:74px;text-align:center}
+.countdown{max-width:100%}
+.countdown b{font-family:var(--font-display);font-size:2.2rem;display:block;line-height:1}
+.countdown small{font-size:.76rem;color:#CCFBF1}
+
+/* Testimonials */
+.testi{background:var(--cream)}
+.testi-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.t-ctrl{display:flex;gap:12px;margin-top:30px}
+.t-ctrl button{width:56px;height:56px;border-radius:50%;border:2px solid var(--charcoal);display:grid;place-items:center;transition:background .3s,border-color .3s}
+.t-ctrl button:hover{background:var(--primary);border-color:var(--primary)}
+.t-ctrl button:hover svg{stroke:#fff}
+.t-ctrl svg{width:22px;height:22px;stroke:var(--charcoal);transition:stroke .3s}
+.t-viewport{overflow:hidden;border-radius:var(--radius-lg)}
+.t-track{display:flex;transition:transform .7s cubic-bezier(.77,0,.18,1)}
+.t-slide{min-width:100%;background:#fff;padding:46px;border-radius:var(--radius-lg)}
+.t-slide .quote{font-family:var(--font-display);font-size:5rem;line-height:.6;color:var(--primary)}
+.t-slide p.q{font-size:1.2rem;margin:10px 0 28px;color:var(--charcoal)}
+.t-user{display:flex;align-items:center;gap:14px}
+.t-user img{width:58px;height:58px;border-radius:50%;object-fit:cover;background:var(--charcoal)}
+.t-user strong{display:block}
+.t-user small{color:var(--muted)}
+
+/* FAQ + Blog */
+.faq-wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font-weight:600;font-size:1.08rem;color:var(--charcoal)}
+.faq-q i{width:36px;height:36px;border-radius:50%;background:var(--cream);display:grid;place-items:center;flex:none;transition:background .3s,transform .4s}
+.faq-q i svg{width:16px;height:16px;stroke:var(--charcoal);transition:stroke .3s}
+.faq-item.open .faq-q i{background:var(--primary);transform:rotate(45deg)}
+.faq-item.open .faq-q i svg{stroke:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease;color:var(--muted)}
+.faq-a p{padding:0 0 22px;max-width:520px}
+.blog-list{display:grid;gap:22px}
+/* Equal-height blog cards: fixed row height, image box crops with object-fit */
+.b-card{display:grid;grid-template-columns:170px 1fr;grid-template-rows:160px;gap:22px;background:#fff;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);transition:transform .4s,box-shadow .4s}
+.b-card:hover{transform:translateX(8px);box-shadow:0 24px 40px -28px rgba(5,46,43,.5)}
+.b-card .bi{overflow:hidden;background:var(--charcoal);height:160px;position:relative}
+.b-card .bi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.b-card:hover .bi img{transform:scale(1.1)}
+.b-card div.bt{padding:20px 22px 20px 0;align-self:center}
+.b-card small{color:var(--primary);font-weight:600}
+.b-card h4{font-size:1.5rem;font-weight:600;color:var(--charcoal);margin:6px 0}
+.b-card span.rd{font-size:.88rem;color:var(--muted)}
+
+/* Newsletter */
+.news{background:var(--charcoal);border-radius:var(--radius-lg);padding:56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;color:#fff;position:relative;overflow:hidden}
+.news::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--primary);opacity:.9}
+.news h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;position:relative;z-index:2}
+.news p{color:#9CA3AF;position:relative;z-index:2}
+.news-form{display:flex;gap:10px;background:#fff;border-radius:999px;padding:6px;position:relative;z-index:2;width:min(460px,100%)}
+.news-form input{flex:1;border:0;outline:0;padding:0 20px;font:inherit;background:none;color:var(--charcoal);min-width:0}
+.news-form button{background:var(--primary);color:#fff;padding:13px 26px;border-radius:999px;font-weight:600;transition:background .3s}
+.news-form button:hover{background:var(--charcoal)}
+.news-msg{position:relative;z-index:2;width:100%;color:var(--accent);font-size:.92rem;min-height:1.2em}
+
+/* Footer */
+.footer{background:var(--footer);color:#9CA3AF;padding:90px 0 0;margin-top:110px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:50px}
+.f-brand img{height:48px;width:auto;margin-bottom:22px}
+.f-brand p{max-width:340px;font-size:.96rem}
+.socials{display:flex;gap:12px;margin-top:26px}
+.socials a{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .3s}
+.socials a:hover{background:var(--primary);border-color:var(--primary);transform:translateY(-5px)}
+.socials svg{width:20px;height:20px;fill:#fff;transition:fill .3s}
+.footer h4{color:#fff;font-size:1.5rem;font-weight:600;margin-bottom:22px;position:relative;padding-bottom:12px}
+.footer h4::after{content:"";position:absolute;left:0;bottom:0;width:34px;height:3px;background:var(--primary);border-radius:3px}
+.footer li{margin-bottom:12px}
+.footer li a{transition:color .3s,padding-left .3s}
+.footer li a:hover{color:var(--accent);padding-left:6px}
+.f-addr{display:flex;gap:14px;align-items:flex-start}
+.f-addr i{width:44px;height:44px;border-radius:12px;background:rgba(251,191,36,.18);display:grid;place-items:center;flex:none}
+.f-addr svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.f-bottom{margin-top:70px;border-top:1px solid rgba(255,255,255,.1);padding:24px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.9rem}
+
+.f-legal{display:flex;gap:22px;flex-wrap:wrap}.f-legal a{color:inherit;opacity:.85;transition:color .25s,opacity .25s}.f-legal a:hover,.f-legal a:focus-visible{color:var(--accent);opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+/* Scroll-top */
+.to-top{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;background:var(--primary);display:grid;place-items:center;z-index:90;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .35s,transform .35s,background .3s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--charcoal)}
+.to-top svg{width:22px;height:22px;stroke:#fff}
+
+/* Reveal helpers (set by JS only when motion allowed) */
+.js-motion .rv{opacity:0;transform:translateY(40px)}
+
+/* Responsive */
+@media(max-width:1100px){
+  .p-grid{grid-template-columns:repeat(3,1fr)}
+  .nav a.nav-link{padding:10px 11px}
+}
+@media(max-width:980px){
+  .nav,.header-cta .login-btn{display:none}
+  .burger{display:flex}
+  .hero-grid,.why-grid,.testi-wrap,.faq-wrap{grid-template-columns:minmax(0,1fr)}
+  .hero-visual{height:560px;max-width:560px;margin:20px auto 0;width:100%}
+  .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:200px}
+  .c1{grid-column:span 6;grid-row:span 2}
+  .c2,.c5{grid-column:span 3}
+  .c3,.c4{grid-column:span 3}
+  .p-grid{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .timeline::before{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .offer-box{grid-template-columns:minmax(0,1fr)}
+  .offer-img{min-height:280px}
+  .offer-img img{clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .section{padding:80px 0}
+}
+@media(max-width:600px){
+  :root{--header-h:68px}
+  .container{width:92%}
+  .logo img{height:38px}
+  .hero{padding-top:calc(var(--header-h) + 20px);padding-bottom:70px}
+  .hero-grid{gap:28px}
+  .hero-pill{font-size:.82rem;padding:6px 14px 6px 6px;margin-bottom:20px;max-width:100%}
+  .hero p.lead{margin:20px 0 26px;font-size:1.02rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
+  .hero-actions .btn{width:100%}
+  .hero-trust{margin-top:30px;gap:14px}
+  .hero-trust .avatars img{width:38px;height:38px}
+  .hero-visual{height:470px;margin-top:10px}
+  .hv-main{height:360px;width:86%}
+  .hv-small{height:190px;width:50%}
+  .hv-chip{padding:10px 14px;font-size:.8rem;max-width:78%}
+  .hv-chip i{width:36px;height:36px}
+  .chip-1{right:0;bottom:130px}
+  .chip-2{left:0;top:24px}
+  .spin-badge{width:110px;height:110px;right:2%}
+  .spin-badge svg.ring text{font-size:10px}
+  .bento{grid-template-columns:1fr;grid-auto-rows:210px}
+  .c1,.c2,.c3,.c4,.c5{grid-column:span 1;grid-row:span 1}
+  .c1{grid-row:span 2}
+  .p-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 12px}
+  .stat b{font-size:2.4rem}
+  .offer-text{padding:36px 26px}
+  .offer-box{grid-template-columns:minmax(0,1fr)}
+  .countdown{gap:8px;width:100%}
+  .countdown div{flex:1 1 0;min-width:0;width:auto;padding:10px 0}
+  .countdown b{font-size:1.9rem}
+  .offer-text .btn{width:100%}
+  .offer-text p{max-width:100%}
+  .t-slide{padding:30px 24px}
+  .b-card{grid-template-columns:110px 1fr;grid-template-rows:140px;gap:14px}
+  .b-card .bi{height:140px}
+  .b-card div.bt{padding:14px 14px 14px 0}
+  .b-card h4{font-size:1.2rem}
+  .news{padding:36px 26px}
+  .news-form{flex-direction:column;gap:12px;background:none;padding:0;border-radius:0;width:100%}
+  .news-form input{flex:none;width:100%;height:56px;background:#fff;border-radius:999px;padding:0 24px}
+  .news-form button{width:100%;height:56px;padding:0 26px}
+  .f-grid{grid-template-columns:1fr;gap:40px}
+  .mm-links a{font-size:2.2rem}
+  .marquee span{font-size:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms;animation-iteration-count:1;transition-duration:.01ms}
+  html{scroll-behavior:auto}
+}
+
+/* ===== Shared additions: nav pill, scroll progress,  ===== */
+.scroll-progress{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;pointer-events:none}
+.nav{position:relative}
+.nav a.nav-link{z-index:1}
+.mm-links a.current{color:var(--accent)}
+.x-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.x-grid.c4{grid-template-columns:repeat(4,1fr)}
+.x-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;transition:transform .4s,box-shadow .4s}
+.x-card:hover{transform:translateY(-6px);box-shadow:0 24px 40px -28px rgba(5,46,43,.5)}
+.x-card i{width:52px;height:52px;border-radius:14px;background:var(--cream);display:grid;place-items:center;margin-bottom:18px}
+.x-card i svg{width:25px;height:25px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.x-card h3{font-size:1.7rem;color:var(--charcoal);margin-bottom:8px}.x-card p{color:var(--muted);font-size:.96rem}
+.x-card p.q{font-size:1.05rem;color:var(--charcoal);margin-bottom:18px}.x-card strong{display:block;color:var(--charcoal)}.x-card small{color:var(--muted)}
+.x-card ul{margin-top:14px;display:grid;gap:6px;font-size:.92rem}.x-card li::before{content:"\2713  ";color:var(--primary);font-weight:700}
+.x-alt{background:var(--cream)}.x-alt .x-card{background:#fff}.x-cta{margin-top:34px}
+@media(max-width:980px){.x-grid,.x-grid.c4{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.x-grid,.x-grid.c4{grid-template-columns:1fr}}
+
+/* ===== Two-tone sections: skin + white, alternating ===== */
+:root{--skin:#F8E8DA;--skin-rgb:248,232,218}
+main>section:nth-of-type(odd){background:var(--skin)}
+main>section:nth-of-type(even){background:#fff}
+.hero::after{background:#fff}
+.page-hero{--next:#fff}
+.footer{margin-top:0}
+
+/* Sections that had no padding of their own */
+main>section.offer,main>section.cta-sec,main>section#contact,main>section:not([class]){padding:90px 0}
+main>section[style*="padding-top:20px"],main>section[style*="padding-top:0"]{padding-top:80px!important}
+
+/* Cards stay readable on white sections */
+.p-card,.x-card,.v-card,.plan,.b-card,.t-slide,.stat,.cat.cream-card{box-shadow:0 0 0 1px var(--line),0 10px 26px -14px rgba(5,46,43,.22)}
+.cat.cream-card{background:#fff}
+
+/* Home hero: background image clearly visible */
+.hero{background:linear-gradient(90deg,rgba(var(--skin-rgb),.92) 0%,rgba(var(--skin-rgb),.78) 45%,rgba(var(--skin-rgb),.18) 100%),url("") center/cover no-repeat,var(--skin)}
+.hero::before{display:none}
+
+/* Inner-page hero: image visible, light overlay, dark text */
+.page-hero{color:var(--text);background:var(--skin)}
+.page-hero::before{opacity:1;background:linear-gradient(90deg,rgba(var(--skin-rgb),.94) 0%,rgba(var(--skin-rgb),.7) 50%,rgba(var(--skin-rgb),.2) 100%),var(--ph-img,none) center/cover no-repeat}
+.page-hero h1{color:var(--charcoal)}
+.page-hero h1 .line.accent{color:var(--primary)}
+.page-hero p.lead{color:#3F4F4C}
+.page-hero .btn-ghost{border-color:var(--charcoal);color:var(--charcoal)}
+.page-hero .btn-ghost:hover{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.crumbs{color:#3F4F4C}
+.crumbs a{color:var(--charcoal)}
+.ph-ring.r1{border-color:rgba(15,118,110,.14)}
+.ph-ring.r2{opacity:.18}
+.ph-ring.r3{border-color:var(--primary);opacity:.3}
+
+/* "Why / numbers" section: dark -> light */
+.why{color:var(--text)}
+.why::after{border-color:rgba(15,118,110,.08)}
+.why .sec-title{color:var(--charcoal)}
+.why .sec-sub{color:var(--muted)}
+.why .tag{color:var(--primary)!important}
+.feat{border-bottom-color:var(--line)}
+.feat h4{color:var(--charcoal)}
+.feat p{color:var(--muted)}
+.feat i{background:rgba(15,118,110,.12)}
+.feat i svg{stroke:var(--primary)}
+.stat{background:#fff;border-color:var(--line)}
+.stat b{color:var(--primary)}
+.stat span{color:var(--muted)}
+
+.faq-item{box-shadow:none;background:none}
+
+/* Hover fixes: keep badges/wishlist above zooming image; buttons stay in place */
+.p-img .badge,.p-img .wish,.p-img .quick{z-index:3}
+.p-img .wish:hover,.btn:hover,.btn:hover svg,.socials a:hover,.mm-close:hover{transform:none!important}
+</style>
+<!-- scroll-restore: keeps the exact scroll position across reloads -->
+<style id="sr-style">html.sr-wait body{visibility:hidden}</style>
+<script id="sr-script">
+(function(){
+  var root=document.documentElement,DASH=false,PAGE=location.pathname;
+  try{history.scrollRestoration='manual';}catch(e){}
+  function view(){
+    if(!DASH)return '';
+    var p=document.querySelector('.view-panel.active');
+    if(p)return p.getAttribute('data-view-panel');
+    try{return sessionStorage.getItem('stackly_car_view_')||'overview';}catch(e){return 'overview';}
+  }
+  function key(){return 'stackly_scroll:'+PAGE+(DASH?':'+view():'');}
+  var nav=null;try{nav=performance.getEntriesByType('navigation')[0];}catch(e){}
+  var restoring=!nav||nav.type==='reload'||nav.type==='back_forward';
+  var target=0;
+  if(restoring){
+    try{
+      var v=DASH?(sessionStorage.getItem('stackly_car_view_')||'overview'):'';
+      target=parseInt(sessionStorage.getItem('stackly_scroll:'+PAGE+(DASH?':'+v:''))||'0',10)||0;
+    }catch(e){}
+  }
+  var ready=!(target>0);               /* saving is paused until restore is done */
+  if(target>0){root.classList.add('sr-wait');}
+
+  function finish(){
+    if(ready)return;ready=true;
+    root.classList.remove('sr-wait');root.style.scrollBehavior='';
+  }
+  function restore(){
+    root.style.scrollBehavior='auto';  /* never animate the restore */
+    var tries=0,t0=Date.now(),stop=false;
+    function cancel(){stop=true;finish();}
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){window.addEventListener(ev,cancel,{passive:true,once:true});});
+    function step(){
+      if(stop)return;
+      var max=Math.max(0,root.scrollHeight-window.innerHeight);
+      window.scrollTo(0,Math.min(target,max));
+      var ok=Math.abs(window.scrollY-target)<=2;
+      tries++;
+      if(ok&&document.readyState==='complete'&&tries>3){finish();return;}
+      if(Date.now()-t0>3500){finish();return;}   /* give up gracefully */
+      requestAnimationFrame(step);
+    }
+    step();
+    /* un-hide as soon as the first correct jump has happened */
+    setTimeout(function(){root.classList.remove('sr-wait');},60);
+  }
+  if(target>0){
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',restore);else restore();
+    setTimeout(function(){root.classList.remove('sr-wait');},1500);  /* failsafe */
+  }
+
+  var ticking=false;
+  function save(){
+    if(!ready)return;
+    try{sessionStorage.setItem(key(),String(Math.round(window.scrollY)));}catch(e){}
+  }
+  window.addEventListener('scroll',function(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){ticking=false;save();});
+  },{passive:true});
+  window.addEventListener('pagehide',save);
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')save();});
+  window.__srSave=save;
+})();
+</script>
+<style>
+/* PRELOADER */
+html.pl-lock,html.pl-lock body{overflow:hidden}
+.preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--charcoal,#052E2B);transition:opacity .45s ease,visibility .45s ease}
+.preloader.pl-hide{opacity:0;visibility:hidden}
+.pl-gear{width:56px;height:56px;color:var(--accent,#FBBF24)}
+.pl-spin{transform-box:fill-box;transform-origin:center;animation:pl-spin 1s linear infinite}
+.pl-spin path{fill:currentColor;fill-rule:evenodd}
+.pl-spanner{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.pl-logo{width:clamp(130px,22vw,180px);height:auto;background:transparent}
+@keyframes pl-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.pl-spin{animation-duration:3s}}
+</style>
+</head>
+<body>
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" role="status" aria-label="Loading">
+  <svg class="pl-gear" viewBox="0 0 100 100" aria-hidden="true"><g class="pl-spin"><path d="M86.23,42.50 L95.64,44.23 L95.64,55.77 L86.23,57.50 L80.92,70.31 L86.35,78.19 L78.19,86.35 L70.31,80.92 L57.50,86.23 L55.77,95.64 L44.23,95.64 L42.50,86.23 L29.69,80.92 L21.81,86.35 L13.65,78.19 L19.08,70.31 L13.77,57.50 L4.36,55.77 L4.36,44.23 L13.77,42.50 L19.08,29.69 L13.65,21.81 L21.81,13.65 L29.69,19.08 L42.50,13.77 L44.23,4.36 L55.77,4.36 L57.50,13.77 L70.31,19.08 L78.19,13.65 L86.35,21.81 L80.92,29.69 Z M75,50 A25,25 0 1 0 25,50 A25,25 0 1 0 75,50 Z"/></g><path class="pl-spanner" transform="translate(32 32) scale(1.5)" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  <img class="pl-logo" src="stackly-logo.webp" alt="Stackly Car Accessories" width="180" height="60" onerror="this.style.display='none'">
+</div>
+<noscript><style>.preloader{display:none}html.pl-lock,html.pl-lock body{overflow:auto}</style></noscript>
+<script>document.documentElement.classList.add('pl-lock');</script>
+
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo" aria-label="Stackly home"><img src="stackly-logo.webp" alt="Stackly logo"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+      <a href="About.html" class="nav-link">About</a>
+      <a href="Services.html" class="nav-link">Services</a>
+      <a href="Shop.html" class="nav-link">Shop</a>
+      <a href="Blogs.html" class="nav-link">Blogs</a>
+      <a href="Contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="login.html" class="login-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+        Login
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <span class="scroll-progress" id="scrollProgress" aria-hidden="true"></span>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-top">
+    <img src="stackly-logo.webp" alt="Stackly logo">
+    <button class="mm-close" id="mmClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="mm-links" aria-label="Mobile">
+    <a href="index.html" class="current" aria-current="page">Home <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="About.html">About <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="Services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="Shop.html">Shop <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="Blogs.html">Blogs <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="Contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </nav>
+  <a href="login.html" class="btn btn-red mm-login">Login</a>
+  <p class="mm-note">Open daily, 9:30 AM to 8:00 PM. Salem, Tamil Nadu.</p>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+<div class="hero-bg" aria-hidden="true">
+  <img src="./assets/home bg.webp" alt="" fetchpriority="high">
+</div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-pill rv-hero"><b>New</b> Winter LED light kits are in stock</div>
+      <h1 id="heroTitle" aria-label="Dress your drive.">
+        <span class="line" data-split>Dress your</span>
+        <span class="line red" data-split>drive.</span>
+      </h1>
+      <p class="lead rv-hero">Seat covers, LED lighting, dash cams, floor mats and care kits for every car. Pick it up, or let our team fit it the same day.</p>
+      <div class="hero-actions rv-hero">
+        <a href="#shop" class="btn btn-red magnetic">Shop accessories
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost magnetic">Book a fitting</a>
+      </div>
+      <div class="hero-trust rv-hero">
+        <div class="avatars">
+          <img data-img src="./assets/ava1.webp" alt="">
+          <img data-img src="./assets/ava2.webp" alt="">
+          <img data-img src="./assets/ava3.webp" alt="">
+          <img data-img src="./assets/ava4.webp" alt="">
+        </div>
+        <p><strong>12,000+ cars upgraded</strong>Rated 4.8 by drivers across Salem</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hv-main" id="hvMain"><img data-img src="./assets/garage.webp" alt="Red sports car on the road"></div>
+      <div class="hv-small" id="hvSmall"><img data-img src="./assets/engine.webp" alt="Car steering wheel and dashboard"></div>
+      <div class="hv-chip chip-1" id="chip1">
+        <i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></i>
+        <div><strong>1-year warranty</strong>On every fitted part</div>
+      </div>
+      <div class="hv-chip chip-2" id="chip2">
+        <i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
+        <div><strong>Same-day fitting</strong>Most jobs under 2 hours</div>
+      </div>
+      <div class="spin-badge">
+        <svg class="ring" viewBox="0 0 140 140" aria-hidden="true">
+          <path class="gear" d="M56.54,11.02 L61.84,2.99 L78.16,2.99 L83.46,11.02 L83.46,11.02 L91.72,6.09 L106.42,13.17 L107.72,22.70 L107.72,22.70 L117.30,21.84 L127.47,34.60 L124.51,43.75 L124.51,43.75 L133.51,47.14 L137.14,63.04 L130.50,70.00 L130.50,70.00 L137.14,76.96 L133.51,92.86 L124.51,96.25 L124.51,96.25 L127.47,105.40 L117.30,118.16 L107.72,117.30 L107.72,117.30 L106.42,126.83 L91.72,133.91 L83.46,128.98 L83.46,128.98 L78.16,137.01 L61.84,137.01 L56.54,128.98 L56.54,128.98 L48.28,133.91 L33.58,126.83 L32.28,117.30 L32.28,117.30 L22.70,118.16 L12.53,105.40 L15.49,96.25 L15.49,96.25 L6.49,92.86 L2.86,76.96 L9.50,70.00 L9.50,70.00 L2.86,63.04 L6.49,47.14 L15.49,43.75 L15.49,43.75 L12.53,34.60 L22.70,21.84 L32.28,22.70 L32.28,22.70 L33.58,13.17 L48.28,6.09 L56.54,11.02Z" fill="#052E2B" stroke="#052E2B" stroke-width="2" stroke-linejoin="round"/>
+          <defs><path id="circ" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+          <text><textPath href="#circ">GENUINE PARTS • EXPERT FITTING • GENUINE PARTS • EXPERT FITTING •</textPath></text>
+        </svg>
+        <div class="core"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Seat covers</span><span>LED headlights</span><span>Dash cameras</span><span>Floor mats</span><span>Alloy wheels</span><span>Steering covers</span><span>Car care kits</span><span>Reverse sensors</span>
+    <span>Seat covers</span><span>LED headlights</span><span>Dash cameras</span><span>Floor mats</span><span>Alloy wheels</span><span>Steering covers</span><span>Car care kits</span><span>Reverse sensors</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT / CATEGORIES ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="tag rv">Shop by category</span>
+        <h2 class="sec-title rv">Everything your car is missing</h2>
+      </div>
+      <p class="sec-sub rv">We are a Salem accessory store run by people who drive. Every product on our shelves is tested on our own cars before it reaches yours.</p>
+    </div>
+    <div class="bento">
+      <a href="#shop" class="cat c1 rv">
+        <img data-img src="./assets/exterior.webp" alt="">
+        <div><h3>Exterior styling</h3><p>Spoilers, wheels, body kits and lighting</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
+      <a href="#shop" class="cat c2 rv">
+        <img data-img src="./assets/interior.webp" alt="">
+        <div><h3>Interior comfort</h3><p>Seat covers, mats, cushions</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
+      <a href="#shop" class="cat cream-card c3 rv">
+        <h3>Gift cards</h3>
+        <p>Let them pick their own upgrade.</p>
+        <span class="btn btn-dark" style="padding:10px 22px">Buy now</span>
+      </a>
+      <a href="#shop" class="cat c4 rv">
+        <img data-img src="./assets/wheels.webp" alt="">
+        <div><h3>Wheels</h3><p>Alloys and tyre care</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
+      <a href="#shop" class="cat c5 rv">
+        <img data-img src="./assets/wash.webp" alt="">
+        <div><h3>Car care</h3><p>Polish, wash and detailing kits</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section products" id="shop">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="tag rv">Best sellers</span>
+        <h2 class="sec-title rv">Picked by drivers like you</h2>
+      </div>
+      <div class="tabs rv" role="tablist" aria-label="Filter products">
+        <button class="tab active" data-filter="all" role="tab">All</button>
+        <button class="tab" data-filter="interior" role="tab">Interior</button>
+        <button class="tab" data-filter="exterior" role="tab">Exterior</button>
+        <button class="tab" data-filter="tech" role="tab">Electronics</button>
+        <button class="tab" data-filter="care" role="tab">Care</button>
+      </div>
+    </div>
+    <div class="p-grid" id="pGrid">
+      <article class="p-card" data-cat="interior">
+        <div class="p-img"><span class="badge">-25%</span><img data-img src="./assets/a1.webp" alt="Leather seat covers"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Interior</small><h4>Leatherette Seat Covers</h4><div class="p-row"><span class="price">₹4,499<s>₹5,999</s></span><span class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="tech">
+        <div class="p-img"><span class="badge dark">Top rated</span><img data-img src="./assets/a2.webp" alt="Dash camera"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Electronics</small><h4>4K Dash Camera</h4><div class="p-row"><span class="price">₹6,999</span><span class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="exterior">
+        <div class="p-img"><span class="badge">New</span><img data-img src="./assets/a3.webp" alt="LED headlights"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Exterior</small><h4>LED Headlight Kit</h4><div class="p-row"><span class="price">₹3,299<s>₹3,999</s></span><span class="stars" aria-label="4 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="care">
+        <div class="p-img"><img data-img src="./assets/a4.webp" alt="Car care detailing kit"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Care</small><h4>Ceramic Detailing Kit</h4><div class="p-row"><span class="price">₹1,899</span><span class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="interior">
+        <div class="p-img"><img data-img src="./assets/a5.webp" alt="3D floor mats"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Interior</small><h4>3D All-Weather Floor Mats</h4><div class="p-row"><span class="price">₹2,599</span><span class="stars" aria-label="4 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="exterior">
+        <div class="p-img"><span class="badge dark">Bestseller</span><img data-img src="./assets/a6.webp" alt="Alloy wheels"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Exterior</small><h4>16 inch Alloy Wheels</h4><div class="p-row"><span class="price">₹18,500<s>₹21,000</s></span><span class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="tech">
+        <div class="p-img"><span class="badge">-15%</span><img data-img src="./assets/a7.webp" alt="Reverse parking sensors"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Electronics</small><h4>Reverse Parking Sensors</h4><div class="p-row"><span class="price">₹1,599<s>₹1,899</s></span><span class="stars" aria-label="4 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+      <article class="p-card" data-cat="care">
+        <div class="p-img"><img data-img src="./assets/a8.webp" alt="Portable car vacuum"><button class="quick">Add to cart</button></div>
+        <div class="p-info"><small>Care</small><h4>Cordless Car Vacuum</h4><div class="p-row"><span class="price">₹2,199</span><span class="stars" aria-label="4 stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg></span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img rv" id="whyImg">
+        <img data-img src="./assets/mechanic.webp" alt="Mechanic fitting car accessories">
+        <div class="float"><b data-count="12">0</b>years fitting<br>cars in Salem</div>
+      </div>
+      <div>
+        <span class="tag rv" style="color:var(--accent)">Why Stackly</span>
+        <h2 class="sec-title rv">Parts you can trust, fitted right</h2>
+        <p class="sec-sub rv">Cheap accessories fail in a season. We stock brands we would put on our own cars and back them with a written warranty.</p>
+        <div class="feats">
+          <div class="feat rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></i><div><h4>Genuine parts only</h4><p>Every item is sourced from authorised distributors and comes with a bill.</p></div></div>
+          <div class="feat rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></i><div><h4>Trained fitting team</h4><p>Wiring, trims and sensors are fitted without drilling or damaging your car.</p></div></div>
+          <div class="feat rv"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></i><div><h4>Free delivery in Salem</h4><p>Orders above ₹999 reach your door within 48 hours.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b data-count="12000" data-suffix="+">0</b><span>Cars upgraded</span></div>
+      <div class="stat rv"><b data-count="450" data-suffix="+">0</b><span>Products in stock</span></div>
+      <div class="stat rv"><b data-count="60" data-suffix="+">0</b><span>Trusted brands</span></div>
+      <div class="stat rv"><b data-count="98" data-suffix="%">0</b><span>Happy customers</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="tag rv">Shop by car type</span><h2 class="sec-title rv">Picks for the car you drive</h2></div><p class="sec-sub rv">Not sure what fits? Tell us your make, model and year and we will only suggest parts made for it.</p></div>
+    <div class="x-grid c4"><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M3 13l2-6h14l2 6v4H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></i><h3>Hatchbacks</h3><p>Compact upgrades that suit city driving.</p><ul><li>Custom seat covers</li><li>3D floor mats</li><li>Reverse sensors</li></ul></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M3 13l2-6h14l2 6v4H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></i><h3>Sedans</h3><p>Comfort and style for longer drives.</p><ul><li>Leatherette covers</li><li>LED headlight kit</li><li>Dash camera</li></ul></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M3 13l2-6h14l2 6v4H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></i><h3>SUVs</h3><p>Tough protection for family and rough roads.</p><ul><li>All-weather mats</li><li>Alloy wheels</li><li>Front and rear dash cams</li></ul></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M3 13l2-6h14l2 6v4H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg></i><h3>MPVs and family cars</h3><p>Easy-clean interiors for busy households.</p><ul><li>Washable seat covers</li><li>Cordless vacuum</li><li>Detailing kit</li></ul></div></div>
+  </div>
+</section>
+<!-- ============ SERVICES / PROCESS ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="sec-head" style="justify-content:center;text-align:center">
+      <div>
+        <span class="tag rv">How fitting works</span>
+        <h2 class="sec-title rv">From choosing to driving in four steps</h2>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="step rv"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><h4>Choose</h4><p>Browse online or visit the store and tell us your car model.</p></div>
+      <div class="step rv"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Book a slot</h4><p>Pick a time that suits you. Walk-ins are welcome too.</p></div>
+      <div class="step rv"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>We fit it</h4><p>Our team installs it while you wait in the lounge.</p></div>
+      <div class="step rv"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Drive away</h4><p>Check it, sign off and take your warranty card home.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFER ============ -->
+<section class="offer">
+  <div class="container">
+    <div class="offer-box rv">
+      <div class="offer-text">
+        <h2>Festive sale: up to 30% off</h2>
+        <p>Seat covers, LED kits and dash cams. Offer ends when the timer does.</p>
+        <div class="countdown" id="countdown" aria-live="off">
+          <div><b id="cd-d">00</b><small>Days</small></div>
+          <div><b id="cd-h">00</b><small>Hours</small></div>
+          <div><b id="cd-m">00</b><small>Mins</small></div>
+          <div><b id="cd-s">00</b><small>Secs</small></div>
+        </div>
+        <a href="#shop" class="btn magnetic">Grab the deals
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="offer-img"><img data-img src="./assets/ford.webp" alt="Car with custom accessories"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section testi">
+  <div class="container testi-wrap">
+    <div>
+      <span class="tag rv">Customer stories</span>
+      <h2 class="sec-title rv">Drivers who came back for more</h2>
+      <div class="t-ctrl rv">
+        <button id="tPrev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button id="tNext" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="t-viewport rv">
+      <div class="t-track" id="tTrack">
+        <div class="t-slide"><div class="quote">“</div><p class="q">They fitted my seat covers and a dash cam in under two hours, and not a single trim clip was broken. The team even explained how to use the app.</p><div class="t-user"><img data-img src="./assets/ava1.webp" alt=""><div><strong>Karthik R.</strong><small>Hyundai Creta owner</small></div></div></div>
+        <div class="t-slide"><div class="quote">“</div><p class="q">I was worried about LED kits affecting my wiring. They checked the load first and the lights have been perfect for eight months now.</p><div class="t-user"><img data-img src="./assets/ava3.webp" alt=""><div><strong>Divya S.</strong><small>Maruti Swift owner</small></div></div></div>
+        <div class="t-slide"><div class="quote">“</div><p class="q">Fair prices, real bills and a warranty card. I now bring every car in the family here for accessories and cleaning kits.</p><div class="t-user"><img data-img src="./assets/ava2.webp" alt=""><div><strong>Mohan T.</strong><small>Toyota Innova owner</small></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section x-alt">
+  <div class="container">
+    <div class="sec-head"><div><span class="tag rv">The Stackly promise</span><h2 class="sec-title rv">What you get with every order</h2></div></div>
+    <div class="x-grid c4"><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></i><h3>Written warranty</h3><p>Every fitted part comes with a warranty card.</p></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg></i><h3>7-day returns</h3><p>Unused items in original packaging can be returned with the bill.</p></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></i><h3>Free delivery in Salem</h3><p>Orders above ₹999 reach your door within 48 hours.</p></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></i><h3>Honest bills</h3><p>The price we quote is the price you pay. No surprises at the counter.</p></div></div>
+  </div>
+</section>
+<!-- ============ FAQ + BLOGS ============ -->
+<section class="section" id="blogs">
+  <div class="container faq-wrap">
+    <div>
+      <span class="tag rv">Good to know</span>
+      <h2 class="sec-title rv" style="margin-bottom:30px">Questions we hear often</h2>
+      <div class="faq rv">
+        <div class="faq-item open"><button class="faq-q" aria-expanded="true">Will accessories fit my car model?<i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="faq-a"><p>Yes. Tell us your make, model and year and we only suggest parts that are made for it.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Does fitting affect my car warranty?<i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="faq-a"><p>We use plug-in connectors wherever possible, so nothing is cut or drilled. Ask us before fitting if your car is under company warranty.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I return something I bought?<i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="faq-a"><p>Unused items in original packaging can be returned within 7 days with the bill.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you deliver outside Salem?<i><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="faq-a"><p>Yes, small items ship across Tamil Nadu in 3 to 5 days. Fitting is only available at our store.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <span class="tag rv">From our blog</span>
+      <div class="blog-list" style="margin-top:6px">
+        <a href="#" class="b-card rv"><div class="bi"><img data-img src="./assets/blog1.webp" alt=""></div><div class="bt"><small>Buying guide</small><h4>How to pick seat covers that last</h4><span class="rd">5 min read</span></div></a>
+        <a href="#" class="b-card rv"><div class="bi"><img data-img src="./assets/blog2.webp" alt=""></div><div class="bt"><small>Safety</small><h4>Are brighter LED bulbs legal in India?</h4><span class="rd">4 min read</span></div></a>
+        <a href="#" class="b-card rv"><div class="bi"><img data-img src="./assets/blog3.webp" alt=""></div><div class="bt"><small>Care tips</small><h4>Keep your paint shining through monsoon</h4><span class="rd">6 min read</span></div></a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="tag rv">Visit the store</span><h2 class="sec-title rv">Drop in, we are open every day</h2></div></div>
+    <div class="x-grid"><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i><h3>Opening hours</h3><p>Open daily, 9:30 AM to 8:00 PM, including weekends.</p></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></i><h3>Find us</h3><p>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008.</p></div><div class="x-card rv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i><h3>Walk in or book</h3><p>Walk-ins are welcome. Book a slot if you want a specific fitting time.</p></div></div><div class="x-cta rv"><a href="Contact.html" class="btn btn-red magnetic">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+<!-- ============ NEWSLETTER / CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="news rv">
+      <div>
+        <h2>Get deals before everyone else</h2>
+        <p>One short email a month. New arrivals, offers and fitting tips.</p>
+      </div>
+      <form class="news-form" id="newsForm" novalidate>
+        <input type="email" id="newsEmail" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="news-msg" id="newsMsg" role="status"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <img src="stackly-logo.webp" alt="Stackly logo">
+        <p>Stackly Car Accessories is a Salem store for seat covers, lighting, cameras and care products. Genuine parts, honest prices and careful fitting for every car.</p>
+        <div class="socials">
+          <a href="./404.html" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+          <a href="./404.html" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+          <a href="./404.html" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+          <a href="./404.html" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="Blogs.html">Blogs</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="./404.html">Seat cover fitting</a></li>
+          <li><a href="./404.html">LED light upgrades</a></li>
+          <li><a href="./404.html">Dash cam installation</a></li>
+          <li><a href="./404.html">Interior detailing</a></li>
+          <li><a href="./404.html">Alloy wheel fitting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Address</h4>
+        <div class="f-addr">
+          <address style="font-style:normal">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</address>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span id="yr">2026</span> Stackly Car Accessories. All rights reserved.</span>
+      <span class="f-legal"><a href="./404.html">Privacy</a><a href="./404.html">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = typeof gsap !== 'undefined';
+  var motion = hasGsap && !reduce;
+  if(motion){ document.documentElement.classList.add('js-motion'); gsap.registerPlugin(ScrollTrigger); }
+
+  /* Image fallback if a remote image fails */
+  var fallback = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#052E2B"/><stop offset="1" stop-color="#0F766E"/></linearGradient></defs><rect width="600" height="600" fill="url(#g)"/></svg>');
+  document.querySelectorAll('img[data-img]').forEach(function(img){
+    img.loading = 'lazy';
+    img.addEventListener('error', function(){ if(img.src !== fallback) img.src = fallback; });
+  });
+
+  /* Header state + active link + back to top */
+  var header = document.getElementById('header');
+  var toTop = document.getElementById('toTop');
+  var links = document.querySelectorAll('.nav-link');
+  function onScroll(){
+    var y = window.scrollY;
+    header.classList.toggle('is-scrolled', y > 40);
+    toTop.classList.toggle('show', y > 700);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
+
+  /* Mobile menu */
+  var menu = document.getElementById('mobileMenu');
+  var burger = document.getElementById('burger');
+  var closeBtn = document.getElementById('mmClose');
+  function openMenu(){ menu.classList.add('open'); menu.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; closeBtn.focus(); }
+  function closeMenu(){ menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; burger.focus(); }
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.remove('open'); document.body.style.overflow=''; }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && menu.classList.contains('open')) closeMenu(); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 980 && menu.classList.contains('open')){ menu.classList.remove('open'); document.body.style.overflow=''; } });
+
+  /* Footer year */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* Product tabs */
+  var tabs = document.querySelectorAll('.tab');
+  var cards = document.querySelectorAll('.p-card');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+      var f = t.dataset.filter, show = [];
+      cards.forEach(function(c){
+        var ok = f === 'all' || c.dataset.cat === f;
+        c.classList.toggle('hide', !ok);
+        if(ok) show.push(c);
+      });
+      if(motion) gsap.fromTo(show, {opacity:0, y:30, scale:.95}, {opacity:1, y:0, scale:1, duration:.55, stagger:.07, ease:'power3.out', clearProps:'transform'});
+      if(motion) ScrollTrigger.refresh();
+    });
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')) a.style.maxHeight = a.scrollHeight + 'px';
+    q.addEventListener('click', function(){
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = 0; o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; q.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  /* Testimonials slider */
+  var track = document.getElementById('tTrack'), idx = 0, total = track.children.length, timer;
+  function go(i){ idx = (i + total) % total; track.style.transform = 'translateX(-' + (idx*100) + '%)'; }
+  document.getElementById('tPrev').addEventListener('click', function(){ go(idx-1); reset(); });
+  document.getElementById('tNext').addEventListener('click', function(){ go(idx+1); reset(); });
+  function reset(){ clearInterval(timer); if(!reduce) timer = setInterval(function(){ go(idx+1); }, 6000); }
+  reset();
+
+  /* Newsletter validation */
+  document.getElementById('newsForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = document.getElementById('newsEmail').value.trim(), msg = document.getElementById('newsMsg');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ msg.textContent = 'Enter a valid email address, for example name@email.com.'; return; }
+    window.location.href = '404.html';
+  });
+
+  /* Countdown (rolls 9 days ahead from first visit) */
+  var end = Date.now() + 9*24*3600*1000 + 6*3600*1000;
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var d = Math.max(0, end - Date.now()), s = Math.floor(d/1000);
+    document.getElementById('cd-d').textContent = pad(Math.floor(s/86400));
+    document.getElementById('cd-h').textContent = pad(Math.floor(s%86400/3600));
+    document.getElementById('cd-m').textContent = pad(Math.floor(s%3600/60));
+    document.getElementById('cd-s').textContent = pad(s%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* Counters */
+  function runCounter(el){
+    var target = +el.dataset.count, suffix = el.dataset.suffix || '';
+    if(!motion){ el.textContent = target.toLocaleString('en-IN') + suffix; return; }
+    var o = {v:0};
+    gsap.to(o, {v:target, duration:2.2, ease:'power2.out', onUpdate:function(){ el.textContent = Math.round(o.v).toLocaleString('en-IN') + suffix; }});
+  }
+
+  if(!motion){
+    document.querySelectorAll('.char').forEach(function(c){ c.style.transform='none'; });
+    document.querySelectorAll('[data-count]').forEach(runCounter);
+    return;
+  }
+
+  /* Hero: split text into characters, then one orchestrated entrance */
+  document.querySelectorAll('[data-split]').forEach(function(line){
+    var text = line.textContent; line.textContent = '';
+    text.split('').forEach(function(ch){
+      var s = document.createElement('span'); s.className = 'char'; s.textContent = ch === ' ' ? '\u00A0' : ch; line.appendChild(s);
+    });
+  });
+  var tl = gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.from('.hero-pill', {y:20, opacity:0, duration:.6})
+    .to('.char', {y:0, duration:1, stagger:.045}, '-=.2')
+    .from('.hero p.lead, .hero-actions, .hero-trust', {y:28, opacity:0, duration:.8, stagger:.12}, '-=.6')
+    .from('.hv-main', {clipPath:'inset(0 0 100% 0)', duration:1.3, ease:'power3.inOut'}, 0.2)
+    .from('.hv-small', {scale:.7, opacity:0, duration:.9}, 0.9)
+    .from('.hv-chip', {scale:.6, opacity:0, duration:.7, stagger:.2, ease:'back.out(1.8)'}, 1.2)
+    .from('.spin-badge', {scale:0, rotate:-120, duration:.9, ease:'back.out(1.6)'}, 1.5)
+    .from('.header', {yPercent:-100, duration:.8}, 0.1);
+  gsap.to('.chip-1', {y:-12, duration:2.4, yoyo:true, repeat:-1, ease:'sine.inOut'});
+  gsap.to('.chip-2', {y:12, duration:2.8, yoyo:true, repeat:-1, ease:'sine.inOut'});
+
+  /* Parallax on main images */
+  gsap.to('#hvMain img', {yPercent:-10, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+  gsap.to('#whyImg img', {yPercent:-12, ease:'none', scrollTrigger:{trigger:'#whyImg', start:'top bottom', end:'bottom top', scrub:true}});
+
+  /* Section title text reveal */
+  gsap.utils.toArray('.sec-title').forEach(function(t){
+    var words = t.textContent.trim().split(/\s+/); t.textContent = '';
+    words.forEach(function(w){
+      var wrap = document.createElement('span'); wrap.style.cssText = 'display:inline-block;overflow:hidden;vertical-align:top;margin-right:.26em;padding-bottom:.06em';
+      var inner = document.createElement('span'); inner.style.display = 'inline-block'; inner.textContent = w; wrap.appendChild(inner); t.appendChild(wrap);
+    });
+    gsap.set(t, {opacity:1, y:0});
+    gsap.from(t.querySelectorAll('span > span'), {yPercent:110, duration:.9, stagger:.07, ease:'power4.out', scrollTrigger:{trigger:t, start:'top 85%', once:true}});
+  });
+
+  /* Generic reveals, batched */
+  ScrollTrigger.batch('.rv:not(.sec-title)', {
+    start:'top 88%', once:true,
+    onEnter:function(els){ gsap.to(els, {opacity:1, y:0, duration:.9, stagger:.12, ease:'power3.out'}); }
+  });
+
+  /* Process dots pop */
+  gsap.from('.step .dot', {scale:0, duration:.7, stagger:.18, ease:'back.out(1.8)', scrollTrigger:{trigger:'.timeline', start:'top 80%', once:true}});
+
+  /* Counters on view */
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    ScrollTrigger.create({trigger:el, start:'top 90%', once:true, onEnter:function(){ runCounter(el); }});
+  });
+
+  /* Marquee speeds up with scroll velocity */
+  var mq = gsap.getTweensOf('.marquee-track');
+  ScrollTrigger.create({onUpdate:function(self){ /* css animation, nudge skew instead */ gsap.to('.marquee', {skewX: gsap.utils.clamp(-6, 6, self.getVelocity()/-400), duration:.4, overwrite:true}); }});
+
+  /* Magnetic buttons */
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnetic-off').forEach(function(b){
+      b.addEventListener('mousemove', function(e){
+        var r = b.getBoundingClientRect();
+        gsap.to(b, {x:(e.clientX - r.left - r.width/2)*.25, y:(e.clientY - r.top - r.height/2)*.35, duration:.4, ease:'power3.out'});
+      });
+      b.addEventListener('mouseleave', function(){ gsap.to(b, {x:0, y:0, duration:.6, ease:'elastic.out(1,.4)'}); });
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  /* ---- Scroll progress bar in header ---- */
+  var sp = document.getElementById('scrollProgress');
+  if(sp){
+    var upd = function(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      sp.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+    };
+    window.addEventListener('scroll', upd, {passive:true}); window.addEventListener('resize', upd); upd();
+  }
+
+})();
+</script>
+<script>
+/* Stackly shared rules: 404 navigation for body links/buttons + input restrictions */
+(function(){
+  var NOT_FOUND = '404.html';
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (page === '404.html') return;
+
+  /* ---------- 1. Links & buttons outside header / mobile menu / footer go to 404 ---------- */
+  var SAFE = 'header, footer, .mobile-menu, .crumbs';
+  var BTN_404 = '.quick, .cart-btn';          // Add to cart, cart button
+
+  function goNotFound(e){ e.preventDefault(); e.stopImmediatePropagation(); window.location.href = NOT_FOUND; }
+
+  document.querySelectorAll('a[href]').forEach(function(a){
+    if (a.closest(SAFE)) return;
+    var h = a.getAttribute('href') || '';
+    if (/^(tel:|mailto:)/i.test(h)) return;      // phone / email links keep working
+    a.setAttribute('href', NOT_FOUND);
+  });
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (a && !a.closest(SAFE) && !/^(tel:|mailto:)/i.test(a.getAttribute('href') || '')) return goNotFound(e);
+    var b = e.target.closest && e.target.closest(BTN_404);
+    if (b && !b.closest(SAFE)) return goNotFound(e);
+  }, true);
+
+  /* ---------- 2. Input restrictions ---------- */
+  function restrict(input, re, max){
+    input.addEventListener('keypress', function(e){
+      if (e.ctrlKey || e.metaKey || e.key.length > 1) return;
+      if (re.test(e.key)) e.preventDefault();
+    });
+    function clean(){
+      var v = input.value.replace(re, '');
+      if (max) v = v.slice(0, max);
+      if (v !== input.value) input.value = v;
+    }
+    input.addEventListener('input', clean);
+    input.addEventListener('paste', function(){ setTimeout(clean, 0); });
+    clean();
+  }
+  var NON_LETTER = /[^A-Za-z]/g, SPACE = /\s/g, NON_DIGIT = /[^0-9]/g;
+
+  document.querySelectorAll('input').forEach(function(i){
+    var key = ((i.id || '') + ' ' + (i.name || '') + ' ' + (i.getAttribute('autocomplete') || '')).toLowerCase();
+    var type = (i.type || '').toLowerCase();
+    if (i.disabled || type === 'password' || type === 'search' || type === 'checkbox' || type === 'radio') return;
+    if (type === 'email' || /email/.test(key)) { restrict(i, SPACE, 60); i.setAttribute('autocapitalize','off'); i.spellcheck = false; }
+    else if (type === 'tel' || /phone|mobile|\btel\b/.test(key)) { restrict(i, NON_DIGIT, 10); i.setAttribute('inputmode','numeric'); }
+    else if (/name/.test(key) && !/user/.test(key)) { restrict(i, NON_LETTER, 30); }
+  });
+
+})();
+</script>
+<script>
+/* PRELOADER logic: gear + logo, shown for 1 second */
+(function(){
+  var pre=document.getElementById('preloader');
+  if(!pre)return;
+  try{if(window.gsap){gsap.globalTimeline.pause();window.__plResume=function(){try{gsap.globalTimeline.resume()}catch(e){}}}}catch(e){}
+  var start=performance.now(),done=false;
+  function hide(){
+    if(done)return;done=true;
+    pre.classList.add('pl-hide');
+    document.documentElement.classList.remove('pl-lock');
+    if(window.__plResume)window.__plResume();
+    setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);},500);
+  }
+  function ready(){setTimeout(hide,Math.max(0,1000-(performance.now()-start)));}
+  if(document.readyState==='complete')ready();else window.addEventListener('load',ready);
+  setTimeout(hide,4000);
+})();
+</script>
+</body>
+</html>

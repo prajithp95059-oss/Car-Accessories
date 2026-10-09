@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Login | Stackly Car Accessories</title>
+<meta name="description" content="Log in or create your Stackly Car Accessories account to track orders, book fittings and manage your wishlist.">
+<link rel="icon" href="stackly-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--charcoal:#052E2B;--charcoal-mid:#0A4540;--primary:#0F766E;--primary-dk:#0B5A54;--accent:#FBBF24;--accent-soft:#FDE68A;--bg:#FAFAF5;--paper:#FFFFFF;--cream:#FFF6DE;--cream-deep:#FBE8B5;--text:#14211F;--muted:#5B6B68;--line:rgba(5,46,43,.13);--err:#B42318;--fd:'Barlow Condensed','Arial Narrow',sans-serif;--fb:'DM Sans',system-ui,sans-serif;--r:14px;--ease:cubic-bezier(.22,.9,.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}input{font:inherit}
+h1,h2,h3,h4{font-family:var(--fd);text-transform:uppercase;line-height:1;letter-spacing:.3px;color:var(--charcoal)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wordmark{font-family:var(--fd);font-weight:800;font-size:1.7rem;text-transform:uppercase;color:#fff;line-height:1;display:inline-block}
+.wordmark i{color:var(--accent);font-style:normal}
+
+.auth-wrap{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr}
+.auth-visual{position:relative;overflow:hidden;isolation:isolate;color:var(--charcoal);background:linear-gradient(90deg,rgba(255,246,222,.96) 0%,rgba(255,246,222,.92) 55%,rgba(255,246,222,.6) 100%),url("./assets/login\ bg.webp") center/cover no-repeat,var(--cream)}
+.av-content{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-start;gap:26px;padding:clamp(34px,6vh,60px) clamp(36px,5vw,72px)}
+.av-logo{align-self:flex-start;background:none;padding:0;border-radius:0;display:inline-flex}
+.av-logo img{height:76px;width:auto;filter:invert(1) hue-rotate(180deg)}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:7px 18px 7px 7px;border-radius:999px;font-size:.86rem;font-weight:600;margin-bottom:22px}
+.hero-pill b{background:var(--primary);color:#fff;padding:4px 12px;border-radius:999px;font-weight:600}
+.av-hero{max-width:52ch}
+.av-hero h1{font-size:clamp(3.4rem,6.6vw,6.6rem);font-weight:800;color:var(--charcoal);line-height:.9;margin-bottom:20px}
+.av-hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.av-hero h1 .line.red{color:var(--primary)}
+.av-hero h1 .line>span{display:inline-block;transform:translateY(110%)}
+.av-hero p{color:var(--text);font-weight:500;font-size:1.05rem;margin-bottom:24px;max-width:46ch}
+.av-stats{display:flex;gap:clamp(20px,3vw,40px);flex-wrap:wrap}
+.av-stats h3{font-size:clamp(2rem,3vw,2.6rem);font-weight:700;color:var(--primary);margin-bottom:2px}
+.av-stats span{font-size:.85rem;color:var(--text);font-weight:500}
+.av-visual{position:relative;height:clamp(200px,28vh,280px);max-width:520px;width:100%;align-self:flex-end;margin-top:auto}
+.hv-main{position:absolute;right:0;top:0;width:78%;height:100%;border-radius:28px 28px 120px 28px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(5,46,43,.5);background:var(--charcoal)}
+.hv-main img{width:100%;height:100%;object-fit:cover}
+.hv-small{position:absolute;left:0;bottom:-6px;width:38%;height:62%;border-radius:22px;overflow:hidden;border:7px solid var(--cream);box-shadow:0 30px 50px -25px rgba(5,46,43,.55);background:var(--charcoal)}
+.hv-small img{width:100%;height:100%;object-fit:cover}
+.hv-chip{position:absolute;right:-6px;bottom:14px;background:#fff;border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 24px 40px -18px rgba(5,46,43,.4);font-size:.84rem;line-height:1.3}
+.hv-chip i{width:38px;height:38px;border-radius:12px;background:var(--primary);display:grid;place-items:center;flex:none}
+.hv-chip i svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hv-chip strong{display:block;font-size:.95rem}
+@media (max-height:780px){.av-visual{display:none}}
+.auth-panel{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;min-height:100svh;padding:clamp(28px,4vw,56px) clamp(24px,5vw,80px);background:var(--bg)}
+.auth-box{width:100%;max-width:440px}
+.mode-switch{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--cream);border-radius:999px;padding:5px;margin-bottom:30px;border:1px solid var(--line)}
+.mode-switch .slider{position:absolute;top:5px;left:5px;width:calc(50% - 5px);height:calc(100% - 10px);background:var(--charcoal);border-radius:999px;transition:transform .4s var(--ease)}
+.mode-switch[data-mode="signup"] .slider{transform:translateX(100%)}
+.mode-switch button{position:relative;z-index:2;padding:11px 0;font-weight:600;font-size:.95rem;color:var(--charcoal);border-radius:999px;transition:color .3s}
+.mode-switch button.active{color:#fff}
+.auth-view{display:none}.auth-view.active{display:block;animation:viewIn .5s var(--ease)}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.auth-eyebrow{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.88rem;color:var(--primary);margin-bottom:8px}
+.auth-eyebrow::before{content:"";width:30px;height:3px;background:var(--primary);border-radius:3px}
+.auth-box h2{font-size:clamp(2rem,4vw,2.6rem);font-weight:700;margin-bottom:22px}
+.role-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.role-opt{position:relative;display:flex}
+.role-opt input{position:absolute;opacity:0;pointer-events:none}
+.role-opt .card{flex:1;width:100%;min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff;font-weight:600;font-size:.9rem;color:var(--muted);text-align:center;transition:border-color .25s,background .25s,color .25s}
+.role-opt .card svg{width:26px;height:26px;stroke:var(--muted);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.role-opt .card:hover{border-color:var(--primary)}
+.role-opt input:checked+.card{border-color:var(--primary);background:rgba(15,118,110,.08);color:var(--charcoal);box-shadow:inset 0 -3px 0 var(--accent)}
+.role-opt input:checked+.card svg{stroke:var(--primary)}
+.role-opt input:focus-visible+.card{outline:3px solid var(--accent);outline-offset:2px}
+.role-caption{font-size:.93rem;color:var(--muted);margin-bottom:20px}.role-caption b{color:var(--primary);font-weight:600}
+.top-alert{display:none;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:var(--r);margin-bottom:16px;font-size:.93rem;background:rgba(180,35,24,.08);color:var(--err);border:1px solid rgba(180,35,24,.28)}
+.top-alert.show{display:flex}
+.top-alert svg{width:18px;height:18px;flex:none;margin-top:3px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.top-alert.ok{background:rgba(15,118,110,.1);color:var(--primary-dk);border-color:rgba(15,118,110,.3)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-weight:600;font-size:.88rem;color:var(--charcoal);margin-bottom:6px}
+.form-group input[type=text],.form-group input[type=email],.form-group input[type=tel],.form-group input[type=password]{width:100%;min-height:50px;padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--text);font-size:1rem;transition:border-color .25s,box-shadow .25s}
+.form-group input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,118,110,.18)}
+.form-group.invalid input{border-color:var(--err)}
+.error-msg{display:none;margin-top:5px;font-size:.86rem;color:var(--err)}
+.form-group.invalid .error-msg{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pw-wrap{position:relative}.pw-wrap input{padding-right:52px!important}
+.pw-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.pw-toggle svg{width:20px;height:20px;stroke:var(--muted);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pw-toggle.on svg{stroke:var(--primary)}
+.pw-strength{height:5px;border-radius:3px;background:var(--cream-deep);margin-top:8px;overflow:hidden}
+.pw-strength-bar{height:100%;width:0;border-radius:3px;transition:width .3s,background .3s}
+.pw-label{font-size:.83rem;font-weight:600;margin-top:6px;color:var(--muted);min-height:1.3em}
+.pw-hint{font-size:.83rem;color:var(--muted);margin-top:6px}
+.pw-rules{list-style:none;display:none;grid-template-columns:1fr 1fr;gap:4px 12px;margin-top:8px}
+.pw-rules.show{display:grid}
+.pw-rules li{font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:7px;transition:color .25s}
+.pw-rules li::before{content:"\2715";display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:rgba(180,35,24,.1);color:var(--err);font-size:.62rem;font-weight:700;flex:none;transition:background .25s,color .25s}
+.pw-rules li.ok{display:none}
+.form-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:2px 0 18px;flex-wrap:wrap}
+.remember{display:inline-flex;align-items:center;gap:8px;font-size:.93rem;cursor:pointer;user-select:none}
+.remember input{width:18px;height:18px;accent-color:var(--primary);cursor:pointer}
+.forgot-link{font-weight:600;font-size:.88rem;color:var(--primary);transition:color .25s}.forgot-link:hover{color:var(--charcoal)}
+.btn-block{width:100%;min-height:54px;padding:14px;border-radius:999px;background:var(--primary);color:#fff;font-weight:600;font-size:1rem;margin-top:6px;box-shadow:0 12px 26px -12px rgba(15,118,110,.8);transition:background .3s,color .3s,transform .3s}
+.btn-block:hover{background:var(--accent);color:var(--charcoal);transform:translateY(-2px)}
+.btn-block:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.switch-note{margin-top:18px;text-align:center;font-size:.96rem;color:var(--muted)}
+.switch-note a{font-weight:600;color:var(--primary);transition:color .25s}.switch-note a:hover{color:var(--charcoal)}
+.back-wrap{width:100%;max-width:440px;display:flex;justify-content:center}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.88rem;color:var(--muted);margin-top:30px;transition:color .25s}
+.back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.back-link:hover{color:var(--primary)}
+@media (max-width:980px){.auth-wrap{grid-template-columns:1fr}.auth-visual{display:none}.auth-panel{justify-content:flex-start;padding:36px 24px 40px}}
+@media (max-width:520px){.form-row{grid-template-columns:1fr}.pw-rules{grid-template-columns:1fr}.role-opt .card{padding:12px 8px;font-size:.85rem}.auth-panel{padding:28px 20px 36px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.auth-view.active{animation:none}.mode-switch .slider{transition:none}}
+
+/* PRELOADER */
+html.pl-lock,html.pl-lock body{overflow:hidden}
+.preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--charcoal,#052E2B);transition:opacity .45s ease,visibility .45s ease}
+.preloader.pl-hide{opacity:0;visibility:hidden}
+.pl-gear{width:56px;height:56px;color:var(--accent,#FBBF24)}
+.pl-spin{transform-box:fill-box;transform-origin:center;animation:pl-spin 1s linear infinite}
+.pl-spin path{fill:currentColor;fill-rule:evenodd}
+.pl-spanner{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.pl-logo{width:clamp(130px,22vw,180px);height:auto;background:transparent}
+@keyframes pl-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.pl-spin{animation-duration:3s}}
+</style>
+</head>
+<body data-page="login">
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" role="status" aria-label="Loading">
+  <svg class="pl-gear" viewBox="0 0 100 100" aria-hidden="true"><g class="pl-spin"><path d="M86.23,42.50 L95.64,44.23 L95.64,55.77 L86.23,57.50 L80.92,70.31 L86.35,78.19 L78.19,86.35 L70.31,80.92 L57.50,86.23 L55.77,95.64 L44.23,95.64 L42.50,86.23 L29.69,80.92 L21.81,86.35 L13.65,78.19 L19.08,70.31 L13.77,57.50 L4.36,55.77 L4.36,44.23 L13.77,42.50 L19.08,29.69 L13.65,21.81 L21.81,13.65 L29.69,19.08 L42.50,13.77 L44.23,4.36 L55.77,4.36 L57.50,13.77 L70.31,19.08 L78.19,13.65 L86.35,21.81 L80.92,29.69 Z M75,50 A25,25 0 1 0 25,50 A25,25 0 1 0 75,50 Z"/></g><path class="pl-spanner" transform="translate(32 32) scale(1.5)" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  <img class="pl-logo" src="stackly-logo.webp" alt="Stackly Car Accessories" width="180" height="60" onerror="this.style.display='none'">
+</div>
+<noscript><style>.preloader{display:none}html.pl-lock,html.pl-lock body{overflow:auto}</style></noscript>
+<script>document.documentElement.classList.add('pl-lock');</script>
+<div class="auth-wrap">
+  <aside class="auth-visual">
+    <div class="av-content">
+      <a href="index.html" class="av-logo" aria-label="Stackly Car Accessories home"><img src="stackly-logo.webp" alt="Stackly Car Accessories"></a>
+      <div class="av-hero">
+        <div class="hero-pill"><b>Portal</b> Orders, fittings and stock in one place</div>
+        <h1 id="heroTitle" aria-label="Dress your drive."><span class="line"><span>Dress your</span></span><span class="line red"><span>drive.</span></span></h1>
+        <p>Track your orders, book a fitting slot and keep your favourite seat covers, LED lights and dash cams in one garage, all from our Salem store.</p>
+        <div class="av-stats">
+          <div><h3>12,000+</h3><span>Cars upgraded</span></div>
+          <div><h3>4.8</h3><span>Driver rating</span></div>
+          <div><h3>10 yrs</h3><span>On the road</span></div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+  <main class="auth-panel">
+    <div class="auth-box" id="authBox">
+      <div class="mode-switch" id="modeSwitch" data-mode="signin"><div class="slider"></div><button type="button" class="active" data-mode="signin">Log In</button><button type="button" data-mode="signup">Sign Up</button></div>
+
+      <section class="auth-view active" id="viewSignin">
+        <div class="auth-eyebrow">Welcome back</div>
+        <h2>Log in to your account</h2>
+        <div class="role-picker"><label class="role-opt"><input type="radio" name="login-role" value="customer" checked><div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/></svg>Customer</div></label><label class="role-opt"><input type="radio" name="login-role" value="admin" ><div class="card"><svg viewBox="0 0 24 24"><path d="M3 10l2-5h14l2 5"/><rect x="3" y="10" width="18" height="8" rx="2"/><circle cx="7.5" cy="14" r="1.2"/><circle cx="16.5" cy="14" r="1.2"/><path d="M5 18v2M19 18v2"/></svg>Store Admin</div></label></div>
+        <div class="role-caption" id="loginRoleCaption">Signing in as a <b>customer</b></div>
+        <div class="top-alert" id="loginAlert" role="alert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span id="loginAlertText">Please fill in a valid email and password.</span></div>
+        <form id="formLogin" novalidate>
+          <div class="form-group" id="fg-lemail"><label for="loginEmail">Email address</label><input type="email" id="loginEmail" placeholder="you@email.com" autocomplete="username" autocapitalize="off" spellcheck="false" maxlength="60"><span class="error-msg">Enter a valid email address.</span></div>
+          <div class="form-group" id="fg-lpass"><label for="loginPassword">Password</label><div class="pw-wrap"><input type="password" id="loginPassword" placeholder="At least 8 characters" autocomplete="current-password" maxlength="32"><button type="button" class="pw-toggle" data-target="loginPassword" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div><span class="error-msg">Password must be at least 8 characters.</span></div>
+          <div class="form-meta">
+            <label class="remember" for="rememberMe"><input type="checkbox" id="rememberMe" name="remember"> Remember me</label>
+            <button type="button" class="forgot-link" id="forgotLink">Forgot password?</button>
+          </div>
+          <button type="submit" class="btn-block" id="loginSubmit">Log in as <span id="loginRoleLabel">Customer</span> →</button>
+        </form>
+        <div class="switch-note">New here? <a href="#signup" id="toSignup">Create an account</a></div>
+      </section>
+
+      <section class="auth-view" id="viewSignup">
+        <div class="auth-eyebrow">Join Stackly Car Accessories</div>
+        <h2>Create your account</h2>
+        <div class="top-alert ok" id="signupAlert" role="status"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Account created. Please log in.</span></div>
+        <form id="formSignup" novalidate>
+          <div class="form-row">
+            <div class="form-group" id="fg-sfname"><label for="signupFirstName">First name</label><input type="text" id="signupFirstName" placeholder="First name" maxlength="30" autocomplete="given-name" spellcheck="false"><span class="error-msg">Please enter your first name.</span></div>
+            <div class="form-group" id="fg-slname"><label for="signupLastName">Last name</label><input type="text" id="signupLastName" placeholder="Last name" maxlength="30" autocomplete="family-name" spellcheck="false"><span class="error-msg">Please enter your last name.</span></div>
+          </div>
+          <div class="role-picker"><label class="role-opt"><input type="radio" name="signup-role" value="customer" checked><div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/></svg>Customer</div></label><label class="role-opt"><input type="radio" name="signup-role" value="admin" ><div class="card"><svg viewBox="0 0 24 24"><path d="M3 10l2-5h14l2 5"/><rect x="3" y="10" width="18" height="8" rx="2"/><circle cx="7.5" cy="14" r="1.2"/><circle cx="16.5" cy="14" r="1.2"/><path d="M5 18v2M19 18v2"/></svg>Store Admin</div></label></div>
+          <div class="role-caption" id="signupRoleCaption">Creating an account as a <b>customer</b></div>
+          <div class="form-group" id="fg-semail"><label for="signupEmail">Email address</label><input type="email" id="signupEmail" placeholder="you@email.com" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="60"><span class="error-msg" id="semailErr">Enter a valid email address.</span></div>
+          <div class="form-group" id="fg-sphone"><label for="signupPhone">Mobile number</label><input type="tel" id="signupPhone" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" autocomplete="tel-national"><span class="error-msg">Enter a valid 10-digit mobile number starting with 6 to 9.</span></div>
+          <div class="form-group" id="fg-spass"><label for="signupPassword">Create password</label><div class="pw-wrap"><input type="password" id="signupPassword" placeholder="Create a strong password" autocomplete="new-password" maxlength="32" aria-describedby="pwRules"><button type="button" class="pw-toggle" data-target="signupPassword" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div><div class="pw-strength"><div class="pw-strength-bar" id="pwStrengthBar"></div></div><div class="pw-label" id="pwLabel" aria-live="polite"></div>
+            <ul class="pw-rules" id="pwRules">
+              <li data-rule="len">At least 8 characters</li>
+              <li data-rule="up">One uppercase letter (A-Z)</li>
+              <li data-rule="low">One lowercase letter (a-z)</li>
+              <li data-rule="num">One number (0-9)</li>
+              <li data-rule="sp">One special character (!@#$%)</li>
+            </ul>
+            <span class="error-msg" id="spassErr">Please create a strong password that meets all the requirements above.</span></div>
+          <div class="form-group" id="fg-scpass"><label for="signupConfirm">Confirm password</label><div class="pw-wrap"><input type="password" id="signupConfirm" placeholder="Re-enter password" autocomplete="new-password" maxlength="32"><button type="button" class="pw-toggle" data-target="signupConfirm" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div><span class="error-msg">Passwords do not match.</span></div>
+          <button type="submit" class="btn-block">Create account →</button>
+        </form>
+        <div class="switch-note">Already registered? <a href="#signin" id="toSignin">Log in</a></div>
+      </section>
+
+      <section class="auth-view" id="viewForgot">
+        <div class="auth-eyebrow">Password help</div>
+        <h2>Reset your password</h2>
+        <div class="top-alert ok" id="forgotAlert" role="status"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span id="forgotAlertText">A reset link is on its way.</span></div>
+        <form id="formForgot" novalidate>
+          <div class="form-group" id="fg-femail"><label for="forgotEmail">Email address</label><input type="email" id="forgotEmail" placeholder="you@email.com" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="60"><span class="error-msg">Enter a valid email address.</span></div>
+          <button type="submit" class="btn-block">Send reset link →</button>
+        </form>
+        <div class="switch-note">Remembered it? <a href="#signin" id="forgotBack">Back to log in</a></div>
+      </section>
+    </div>
+    <div class="back-wrap"><a href="index.html" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to home</a></div>
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  if(window.gsap){
+    gsap.set('.hero-pill,.av-hero p,.av-stats,.av-visual',{opacity:0,y:16});
+    gsap.timeline({defaults:{ease:'power4.out'}})
+      .to('.hero-pill',{opacity:1,y:0,duration:.6},.05).to('.av-hero h1 .line > span',{y:'0%',duration:1,stagger:.12},.1)
+      .to('.av-hero p,.av-stats,.av-visual',{opacity:1,y:0,duration:.7,stagger:.12},'-=0.5')
+      .from('.auth-box',{opacity:0,y:22,duration:.7},'-=0.9');
+  }else{document.querySelectorAll('.av-hero h1 .line > span').forEach(function(s){s.style.transform='none';});}
+
+  /* ===== REMEMBER ME (stores only email + role, never the password) ===== */
+  var REMEMBER='stackly_remember';
+  function loadRemembered(){
+    try{
+      var r=JSON.parse(localStorage.getItem(REMEMBER)||'null');
+      if(r&&r.email){
+        $('loginEmail').value=r.email;
+        $('rememberMe').checked=true;
+        var radio=document.querySelector('input[name="login-role"][value="'+(r.role==='admin'?'admin':'customer')+'"]');
+        if(radio){radio.checked=true;radio.dispatchEvent(new Event('change'));}
+      }
+    }catch(e){}
+  }
+  function saveRemembered(email,role,on){
+    try{
+      if(on)localStorage.setItem(REMEMBER,JSON.stringify({email:email,role:role}));
+      else localStorage.removeItem(REMEMBER);
+    }catch(e){}
+  }
+
+  var modeSwitch=$('modeSwitch'),views={signin:$('viewSignin'),signup:$('viewSignup'),forgot:$('viewForgot')};
+  function switchMode(mode){
+    var tab=mode==='signin'||mode==='signup';
+    modeSwitch.style.display=tab?'':'none';
+    if(tab){modeSwitch.setAttribute('data-mode',mode);modeSwitch.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-mode')===mode);});}
+    Object.keys(views).forEach(function(k){views[k].classList.toggle('active',k===mode);});
+    document.querySelectorAll('.top-alert').forEach(function(a){a.classList.remove('show');});
+  }
+  modeSwitch.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){switchMode(b.getAttribute('data-mode'));});});
+  $('toSignup').addEventListener('click',function(e){e.preventDefault();switchMode('signup');});
+  $('toSignin').addEventListener('click',function(e){e.preventDefault();switchMode('signin');});
+  $('forgotLink').addEventListener('click',function(){window.location.href='404.html';});
+  $('forgotBack').addEventListener('click',function(e){e.preventDefault();switchMode('signin');});
+  if(location.hash==='#signup')switchMode('signup');
+
+  function wireRole(name,cap,label){
+    document.querySelectorAll('input[name="'+name+'"]').forEach(function(r){
+      r.addEventListener('change',function(){
+        var a=r.value==='admin';
+        $(cap).innerHTML=(name.indexOf('signup')===0?'Creating an account as a ':'Signing in as a ')+'<b>'+(a?'store admin':'customer')+'</b>';
+        if(label)$(label).textContent=a?'Store Admin':'Customer';
+      });
+    });
+  }
+  wireRole('login-role','loginRoleCaption','loginRoleLabel');wireRole('signup-role','signupRoleCaption',null);
+
+  document.querySelectorAll('.pw-toggle').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=$(b.getAttribute('data-target')),show=i.type==='password';
+      i.type=show?'text':'password';b.classList.toggle('on',show);b.setAttribute('aria-label',show?'Hide password':'Show password');
+    });
+  });
+
+  /* ===== STRONG PASSWORD RULES (signup) ===== */
+  function pwRules(v){
+    return {
+      len:v.length>=8,
+      up:/[A-Z]/.test(v),
+      low:/[a-z]/.test(v),
+      num:/[0-9]/.test(v),
+      sp:/[^A-Za-z0-9]/.test(v)
+    };
+  }
+  function isStrong(v){var r=pwRules(v);return r.len&&r.up&&r.low&&r.num&&r.sp;}
+  var PW_COLORS=['#B42318','#B42318','#D97706','#D97706','#0F766E','#052E2B'];
+  var PW_LABELS=['','Very weak','Weak','Fair','Good','Strong'];
+  var pwSubmitted=false;
+  function updatePwUI(){
+    var v=$('signupPassword').value,r=pwRules(v),s=0;
+    /* show the checklist only while some requirement is not met */
+    $('pwRules').classList.toggle('show',!isStrong(v)&&(v.length>0||pwSubmitted));
+    document.querySelectorAll('#pwRules li').forEach(function(li){
+      var ok=!!r[li.getAttribute('data-rule')];
+      li.classList.toggle('ok',ok);if(ok)s++;
+    });
+    if(!v)s=0;
+    var bar=$('pwStrengthBar');bar.style.width=(s/5*100)+'%';bar.style.background=PW_COLORS[s];
+    var lb=$('pwLabel');lb.textContent=v?PW_LABELS[s]:'';lb.style.color=PW_COLORS[s];
+    /* clear the error as soon as the password becomes strong */
+    if(isStrong(v))setInvalid('fg-spass',false);
+  }
+  $('signupPassword').addEventListener('input',updatePwUI);
+
+  function filter(input,re,max){
+    if(!input)return;
+    input.addEventListener('beforeinput',function(e){
+      if(e.inputType==='insertFromPaste'||e.inputType==='insertFromDrop')return;
+      if(e.data&&e.data.replace(re,'')!==e.data)e.preventDefault();
+    });
+    input.addEventListener('input',function(){
+      var c=input.value.replace(re,'');if(max)c=c.slice(0,max);if(c!==input.value)input.value=c;
+    });
+  }
+  var NL=/[^A-Za-z ]/g,ND=/[^0-9]/g,SP=/\s/g;
+  filter($('signupFirstName'),NL,30);filter($('signupLastName'),NL,30);filter($('signupPhone'),ND,10);
+  ['loginEmail','signupEmail','forgotEmail','loginPassword','signupPassword','signupConfirm'].forEach(function(id){filter($(id),SP);});
+
+  function isEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+  function isPhone(v){return /^[6-9][0-9]{9}$/.test(v);}
+  function isName(v){return /^[A-Za-z][A-Za-z ]{1,29}$/.test(v);}
+  function isLast(v){return /^[A-Za-z][A-Za-z ]{0,29}$/.test(v);}
+  /* clear the red error live once the name becomes valid */
+  $('signupFirstName').addEventListener('input',function(){if(isName(this.value.replace(/\s+/g,' ').trim()))setInvalid('fg-sfname',false);});
+  $('signupLastName').addEventListener('input',function(){if(isLast(this.value.replace(/\s+/g,' ').trim()))setInvalid('fg-slname',false);});
+  function setInvalid(id,bad){$(id).classList.toggle('invalid',bad);}
+  /* clear the "Passwords do not match" error live once both passwords match */
+function syncConfirm(){
+  var pw=$('signupPassword').value,cpw=$('signupConfirm').value;
+  if(cpw&&cpw===pw)setInvalid('fg-scpass',false);
+}
+$('signupConfirm').addEventListener('input',syncConfirm);
+$('signupPassword').addEventListener('input',syncConfirm);
+  function alertMsg(id,tid,text,show){var a=$(id);if(tid&&text)$(tid).textContent=text;a.classList.toggle('show',show);}
+  function cap(w){return w?w.charAt(0).toUpperCase()+w.slice(1).toLowerCase():'';}
+
+  /* ===== LOGIN: any valid email + password goes to the dashboard for the selected role ===== */
+  $('formLogin').addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=$('loginEmail').value.trim(),pass=$('loginPassword').value;
+    var eo=isEmail(email),po=pass.length>=8;
+    setInvalid('fg-lemail',!eo);setInvalid('fg-lpass',!po);
+  if(!eo||!po){alertMsg('loginAlert','loginAlertText','Please fill in a valid email and password.',true);return;}
+if(!$('rememberMe').checked){alertMsg('loginAlert','loginAlertText','Please tick "Remember me" to log in.',true);return;}
+alertMsg('loginAlert',null,null,false);
+
+    var rEl=document.querySelector('input[name="login-role"]:checked');
+    var role=rEl?rEl.value:'customer';
+
+    /* remember me: keep email + role only (never the password) */
+    saveRemembered(email.toLowerCase(),role,$('rememberMe').checked);
+
+    var btn=$('loginSubmit');btn.disabled=true;btn.textContent='Logging in…';
+    /* admin -> admin dashboard, customer -> user dashboard */
+    var target=startSession(email,role);
+    setTimeout(function(){window.location.href=target;},700);
+  });
+
+  /* Clear everything when the user comes back with the browser back arrow (page restored from cache) */
+  function resetAll(){
+    ['formLogin','formSignup','formForgot'].forEach(function(id){$(id).reset();});
+    document.querySelectorAll('.form-group.invalid').forEach(function(g){g.classList.remove('invalid');});
+    document.querySelectorAll('.top-alert').forEach(function(a){a.classList.remove('show');});
+    document.querySelectorAll('.pw-toggle').forEach(function(b){
+      var i=$(b.getAttribute('data-target'));i.type='password';b.classList.remove('on');b.setAttribute('aria-label','Show password');
+    });
+    pwSubmitted=false;updatePwUI();
+    $('loginRoleCaption').innerHTML='Signing in as a <b>customer</b>';
+    $('signupRoleCaption').innerHTML='Creating an account as a <b>customer</b>';
+    var btn=$('loginSubmit');btn.disabled=false;
+    btn.innerHTML='Log in as <span id="loginRoleLabel">Customer</span> →';
+  }
+  window.addEventListener('pageshow',function(e){
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(e.persisted||(nav&&nav.type==='back_forward')){
+      resetAll();switchMode('signin');loadRemembered();
+      setTimeout(function(){resetAll();loadRemembered();},50); /* catches late browser form restoration */
+    }
+  });
+
+  /* ===== SIGN UP: validates and collects input, stores nothing, then returns to login ===== */
+  $('formSignup').addEventListener('submit',function(e){
+    e.preventDefault();
+    var fn=$('signupFirstName').value.replace(/\s+/g,' ').trim(),
+        ln=$('signupLastName').value.replace(/\s+/g,' ').trim(),
+        email=$('signupEmail').value.trim(),
+        phone=$('signupPhone').value.trim(),
+        pw=$('signupPassword').value,
+        cpw=$('signupConfirm').value,
+        ok=true;
+    function chk(id,g){setInvalid(id,!g);if(!g)ok=false;}
+    chk('fg-sfname',isName(fn));
+    chk('fg-slname',isLast(ln));
+    $('semailErr').textContent='Enter a valid email address.';
+    chk('fg-semail',isEmail(email));
+    chk('fg-sphone',isPhone(phone));
+    chk('fg-spass',isStrong(pw));
+    pwSubmitted=true;updatePwUI();
+    chk('fg-scpass',!!cpw&&cpw===pw);
+    if(!ok){
+      var firstBad=document.querySelector('#formSignup .form-group.invalid input');
+      if(firstBad)firstBad.focus();
+      return;
+    }
+    /* nothing is stored; just go to the login view */
+    alertMsg('signupAlert',null,null,true);
+    $('formSignup').reset();pwSubmitted=false;updatePwUI();
+    setTimeout(function(){switchMode('signin');$('loginEmail').value=email.toLowerCase();},900);
+  });
+
+  $('formForgot').addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=$('forgotEmail').value.trim(),g=isEmail(email);
+    setInvalid('fg-femail',!g);
+    if(!g){alertMsg('forgotAlert',null,null,false);return;}
+    alertMsg('forgotAlert','forgotAlertText','If an account exists for '+email+', a password reset link is on its way.',true);$('formForgot').reset();
+  });
+
+  /* creates the session info the dashboards read, and returns the page for the role */
+  function startSession(email,role){
+    /* build a display name from the email, e.g. john.smith@x.com -> John Smith */
+    var local=email.split('@')[0].replace(/[^A-Za-z]+/g,' ').trim().split(' ');
+    var first=cap(local[0])||'Friend',last=cap(local[1]);
+    try{
+      ['stackly_role','stackly_name','stackly_email'].forEach(function(k){localStorage.removeItem(k);sessionStorage.removeItem(k);});
+      sessionStorage.setItem('stackly_session',JSON.stringify({first:first,email:email.toLowerCase()}));
+      sessionStorage.setItem('stackly_role',role);
+      sessionStorage.setItem('stackly_name',(first+' '+last).trim());
+      sessionStorage.setItem('stackly_email',email.toLowerCase());
+    }catch(err){}
+    return role==='admin'?'admin-dashboard.html':'user-dashboard.html';
+  }
+
+  /* logout support: linking to login.html?logout clears "Remember me" and stays on this page */
+  var loggedOut=/logout/i.test(location.search+location.hash);
+  if(loggedOut){try{localStorage.removeItem(REMEMBER);}catch(e){}}
+
+  /* prefill email + role if the user chose "Remember me" last time */
+  loadRemembered();
+
+  /* no auto-login: the Login button always shows this page; the user logs in manually */
+})();
+</script>
+<script>
+/* PRELOADER logic: gear + logo, shown for 1 second */
+(function(){
+  var pre=document.getElementById('preloader');
+  if(!pre)return;
+  try{if(window.gsap){gsap.globalTimeline.pause();window.__plResume=function(){try{gsap.globalTimeline.resume()}catch(e){}}}}catch(e){}
+  var start=performance.now(),done=false;
+  function hide(){
+    if(done)return;done=true;
+    pre.classList.add('pl-hide');
+    document.documentElement.classList.remove('pl-lock');
+    if(window.__plResume)window.__plResume();
+    setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);},500);
+  }
+  function ready(){setTimeout(hide,Math.max(0,1000-(performance.now()-start)));}
+  if(document.readyState==='complete')ready();else window.addEventListener('load',ready);
+  setTimeout(hide,4000);
+})();
+</script>
+</body>
+</html>
